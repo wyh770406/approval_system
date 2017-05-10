@@ -1,0 +1,31 @@
+@import 'inits/variables';
+
+.page-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: $page-header-height;
+  margin: 0 !important;
+  padding: 0;
+  border-bottom: 1px solid #999999;
+  background-color: #fff;
+}
+
+.page-sidebar {
+  position: fixed;
+  left: 0;
+  top: $page-header-height;
+  width: $page-sidebar-width;
+  height: calc(100% - #{$page-header-height});
+  color: #fff;
+  background-color: #565e91;
+  overflow: auto;
+}
+
+// 有些页面不显示侧边栏、顶栏
+.page-sidebar ~ .page-main {
+  margin-left: $page-sidebar-width;
+  margin-top: $page-header-height;
+  padding: 20px 30px;
+}

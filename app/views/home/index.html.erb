@@ -1,0 +1,132 @@
+<% content_for(:title, '首页') %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%= form_for :search, url: request.params, method: :get, html: { class: 'form-horizontal col-sm-11'} do |f| %>
+      <div class="form-group">
+
+        <div class="col-sm-3">
+          <%= f.label 'bill_number', '单号', class:'col-sm-4 control-label' %>
+          <div class="col-sm-8">
+            <%= f.text_field 'bill_number', class: 'form-control input-sm' %>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <%= f.label 'bill_type', '单据名称', class:'col-sm-4 control-label' %>
+          <div class="col-sm-8">
+            <%= f.text_field 'bill_type', class: 'form-control input-sm' %>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <%= f.label 'created_at_greater_than_equal_to', '时间(起)', class:'col-sm-4 control-label' %>
+          <div class="col-sm-8">
+            <%= f.text_field 'created_at_greater_than_equal_to', class: 'form-control input-sm' %>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <%= f.label 'created_at_less_than_equal_to', '时间(始)', class:'col-sm-4 control-label' %>
+          <div class="col-sm-8">
+            <%= f.text_field 'created_at_less_than_equal_to', class: 'form-control input-sm' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapse" id="collapse_filter">
+        <div class="form-group">
+          <div class="col-sm-3">
+            <%= f.label 'bill_status', '处理情况', class:'col-sm-4 control-label' %>
+            <div class="col-sm-8">
+              <%= f.text_field 'bill_status', class: 'form-control input-sm' %>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <%= f.label 'payment_type.id', '其他备注', class:'col-sm-4 control-label' %>
+            <div class="col-sm-8">
+              <%= f.text_field 'bill_other_remark', class: 'form-control input-sm' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <a class="pull-right btn btn-link col-sm-1" data-target="#collapse_filter" data-toggle="collapse">展开</a>
+  </div>
+
+  <div class="row">
+    <div>
+      <table class="table table-bordered table-condensed table-responsive">
+        <thead>
+          <tr>
+            <th>单号</th>
+            <th>单据名称</th>
+            <th>时间</th>
+            <th>处理情况</th>
+            <th>其他备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B323344444</td>
+            <td>销售协议</td>
+            <td>2017-04-01</td>
+            <td>未处理</td>
+            <td>这是备注</td>
+          </tr>
+          <tr>
+            <td>B323344444</td>
+            <td>销售协议</td>
+            <td>2017-04-01</td>
+            <td>未处理</td>
+            <td>这是备注</td>
+          </tr>
+          <tr>
+            <td>B323344444</td>
+            <td>销售协议</td>
+            <td>2017-04-01</td>
+            <td>未处理</td>
+            <td>这是备注</td>
+          </tr>
+          <tr>
+            <td>B323344444</td>
+            <td>订单</td>
+            <td>2017-04-01</td>
+            <td>未处理</td>
+            <td>这是备注</td>
+          </tr>
+          <tr>
+            <td>B323344444</td>
+            <td>订单</td>
+            <td>2017-04-01</td>
+            <td>未处理</td>
+            <td>这是备注</td>
+          </tr>
+          <tr>
+            <td>B323344444</td>
+            <td>销售协议</td>
+            <td>2017-04-01</td>
+            <td>未处理</td>
+            <td>这是备注</td>
+          </tr>
+          <tr>
+            <td>B323344444</td>
+            <td>订单</td>
+            <td>2017-04-01</td>
+            <td>未处理</td>
+            <td>备注啊备注</td>
+          </tr>
+          <tr>
+            <td>B323344444</td>
+            <td>销售协议</td>
+            <td>2017-04-01</td>
+            <td>未处理</td>
+            <td>这是备注</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

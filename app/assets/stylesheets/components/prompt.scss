@@ -1,0 +1,45 @@
+// 消息提示，渐现渐隐
+body > .flash-prompt {
+  position: fixed;
+  top: 70%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: transparent;
+  animation: flash 4s linear;
+  z-index: 10000;
+
+  span {
+    display: inline-block;
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #FFFFFF;
+    background-color: #000000;
+    border-radius: 8px;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// 渐现->停留->渐隐
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.8;
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

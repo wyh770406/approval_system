@@ -1,0 +1,27 @@
+.form-horizontal {
+  .form-group {
+    margin: 0 0 15px 0;
+
+    &.required > label {
+      position: relative;
+
+      &:before {
+        content: '*';
+        position: relative;
+        top: 2px;
+        color: #ff0000;
+      }
+    }
+  }
+
+  .actions {
+    .alert {
+      margin: 0 0 10px 0;
+      padding: 5px 10px;
+    }
+
+    .btn + .btn {
+      margin-left: 20px;
+    }
+  }
+}

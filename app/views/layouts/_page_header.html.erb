@@ -1,0 +1,64 @@
+<h1>
+  <i class="fa fa-cogs"></i>
+  审核系统
+</h1>
+
+<div class="header-content">
+  <%= yield :header_content %>
+</div>
+
+<nav>
+  <div class="dropdown corner-todo">
+
+    <ul class="dropdown-menu dropdown-menu-right todos">
+      <li class="item list">
+        <a href="#">
+          <span class="number">A322393234</span>
+          <span class="status">已确认</span>
+          <span class="time"><%= l(Time.zone.now, format: :short) %></span>
+        </a>
+      </li>
+      <li class="item list">
+        <a href="#">
+          <span class="number">A322393234</span>
+          <span class="status">已确认</span>
+          <span class="time"><%= l(Time.zone.now, format: :short) %></span>
+        </a>
+      </li>
+      <li class="item list">
+        <a href="#">
+          <span class="number">A322393234</span>
+          <span class="status">已确认</span>
+          <span class="time"><%= l(Time.zone.now, format: :short) %></span>
+        </a>
+      </li>
+      <li class="item list">
+        <a href="#">
+          <span class="number">A322393234</span>
+          <span class="status">已确认</span>
+          <span class="time"><%= l(Time.zone.now, format: :short) %></span>
+        </a>
+      </li>
+      <li class="item list">
+        <a href="#">
+          <span class="number">A322393234</span>
+          <span class="status">已确认</span>
+          <span class="time"><%= l(Time.zone.now, format: :short) %></span>
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+
+  <div class="dropdown">
+    <span class="dropdown-toggle">
+      <i class="fa fa-user"></i>
+      <span class="name"><%= @current_user.username %></span>
+      <i class="fa fa-caret-down"></i>
+    </span>
+    <ul class="dropdown-menu dropdown-menu-right user-info">
+      <li><%= link_to('退出', logout_path, class: 'item', method: 'delete') %></li>
+    </ul>
+  </div>
+</nav>

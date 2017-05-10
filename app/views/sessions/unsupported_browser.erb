@@ -1,0 +1,39 @@
+<% content_for(:title, '提示页') %>
+<% content_for(:body_class, 'unsupported-browser') %>
+
+<div class="alert-container">
+  <h2>您当前使用的浏览器版本过低，请升级或使用以下浏览器重新打开！</h2>
+
+  <ul>
+    <li>
+      <a href="http://www.firefox.com.cn">
+        <img src="<%= image_path('browsers/firefox.png') %>" alt="logo">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.google.com/chrome/">
+        <img src="<%= image_path('browsers/chrome.png') %>" alt="logo">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.microsoft.com/zh-cn/windows/microsoft-edge">
+        <img src="<%= image_path('browsers/edge.png') %>" alt="logo">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.apple.com/safari/">
+        <img src="<%= image_path('browsers/safari.png') %>" alt="logo">
+      </a>
+    </li>
+    <li>
+      <a href="https://ie.sogou.com/">
+        <img src="<%= image_path('browsers/sogou.png') %>" alt="logo">
+      </a>
+    </li>
+    <li>
+      <a href="http://se.360.cn/">
+        <img src="<%= image_path('browsers/360-secure.png') %>" alt="logo">
+      </a>
+    </li>
+  </ul>
+</div>

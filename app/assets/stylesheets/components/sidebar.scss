@@ -1,0 +1,73 @@
+@import 'inits/variables';
+
+.page-sidebar {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  a:visited {
+    color: inherit;
+  }
+
+  a:hover, a:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  // 一级菜单
+  .sidebar > li > a {
+    font-size: 16px;
+    background-color: #565e91;
+    line-height: 50px;
+
+    .fa {
+      margin: 0 8px 0 22px;
+    }
+  }
+
+  // 一级菜单展开状态
+  .sidebar > li.active > a,
+  .sidebar > li.current > a {
+    border-right: 4px solid #34c0e2;
+
+    .fa {
+      color: #34c0e2;
+    }
+  }
+
+  // 一级菜单 hover 状态
+  .sidebar > li > a:hover {
+    border-right: 4px solid #34c0e2;
+  }
+
+  // 二级菜单
+  .treeview-menu {
+    display: none;
+    font-size: 14px;
+    line-height: 40px;
+    background-color: #3b4267;
+
+    a {
+      padding-left: 50px;
+    }
+
+    li {
+      border-bottom: 1px solid #565e91;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.current {
+        color: #34c0e2;
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+<% if flash[:notice] or flash[:alter] %>
+    <div id="flash" class="hide"><%= flash[:notice].presence || flash[:alter].presence %></div>
+<% end %>
