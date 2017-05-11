@@ -16,8 +16,16 @@ class Api::V1::ApprovalNodesController < ActionController::API
     invoice_id= params[:invoice_id]
     invoice_node_infos = get_invoice_node_infos(platform_no, class_name, invoice_id)
   	invoice_node_infos_hash = (invoice_node_infos && invoice_node_infos.index_by(&:id)) || {}
+    invoice_node_infos_final_hash = {}
+    if !invoice_node_infos_hash.empty?
+      invoice_node_infos_hash.each do |key,val|
+        val2=val.attributes
+        val2[:next_approval_usernames] = get_next_node_approval_usernames(val.approval_node_id)
+        invoice_node_infos_final_hash[key] = val2
+      end
+    end
     
-    render :plain=>invoice_node_infos_hash.to_json
+    render :plain=>invoice_node_infos_final_hash.to_json
   end
 
   def get_flow_id(invoice_platform_no, invoice_class_name)
@@ -32,6 +40,12 @@ class Api::V1::ApprovalNodesController < ActionController::API
   	node_obj_attrs = node_obj.first && node_obj.first.attributes
   	node_obj_attrs = node_obj_attrs || {}  	
   	node_obj_attrs
+  end
+
+  def get_next_node_approval_usernames(curr_node_id)
+    curr_node = ApprovalNode.find(curr_node_id)
+    next_node = ApprovalNode.where({:prev_approval_node_id=>curr_node.id}).first
+    next_node && next_node.approval_processer
   end
 
   def get_invoice_node_infos(platform_no, class_name, invoice_id)

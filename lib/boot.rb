@@ -39,7 +39,7 @@ class Processor
   end
 
   def handle_triggered_events(curr_approval_flow_invoice)
-  	approval_triggered_events = ApprovalTriggeredEvent.where({:ApprovalTriggeredEvent=>curr_approval_flow_invoice.id})
+  	approval_triggered_events = ApprovalTriggeredEvent.where({:approval_flow_id=>curr_approval_flow_invoice.approval_flow.id})
   	approval_triggered_events.each do |approval_triggered_event|
 	  conn = Bunny.new
 	  conn.start

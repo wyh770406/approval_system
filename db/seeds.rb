@@ -16,5 +16,10 @@ ApprovalFlow.create([
 ])
 ApprovalNode.delete_all
 ApprovalNode.create([
-  { approval_flow_id: 1, approval_processer: ["张三","000000"] },
+  { approval_flow_id: 1, approval_processer: ["admin","000000"] },
+  { approval_flow_id: 1, approval_processer: ["admin2","000002"], prev_approval_node_id: 1 },
+])
+ApprovalTriggeredEvent.delete_all
+ApprovalTriggeredEvent.create([
+  { approval_flow_id: 1, event_type: 1 },
 ])
